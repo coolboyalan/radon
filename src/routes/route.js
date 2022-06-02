@@ -5,19 +5,20 @@ const underscore = require('underscore')
 const router = express.Router();
 
 router.get('/movies', function (req, res) {  //PROBLEM1
-    res.send(JSON.stringify(problem.movies))
+    res.send(problem.movies)
 });
 
 router.get('/movies/:movieno', function (req, res) { //PROBLEM2 & PROBLEM3
   res.send(problem.movies[req.params.movieno - 1] || "This isn't a valid index")
 });
 
-router.get('/candidates/:canidatesName', function(req, res){
-    console.log('The request objects is '+ JSON.stringify(req.params))
-    console.log('Candidates name is '+req.params.canidatesName)
-    res.send('Done')
+router.get('/films', function(req, res){ //PROBLEM4
+    res.send(problem.moviesob)
 })
 
+router.get('/films/:filmId', function(req, res){ //PROBLEM5
+    res.send((problem.moviesob)[req.params.filmId - 1] || "There isn't any movie with this ID")
+})
 
 module.exports = router;
 // adding this comment for no reason
