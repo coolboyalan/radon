@@ -41,18 +41,19 @@ let players = [
 
 router.post("/players", function (req, res) {
   let player = req.body;
-  function newPlayers() {
+  let result = false
     for (x = 0; x < players.length; x++) {
       let object = players[x];
       if (player.name == object.name) {
-        return;
-      } else if (player.name !== object.name && (x = players.length - 1)) {
-        players.push(player);
-      }
-    }
-  }
-  newPlayers();
-  res.send(players);
+        result = true
+        break
+      }}
+       if(result){
+           res.send("Player already exist in the database")
+       }else{
+           players.push(player)
+           res.send(players)
+       }
 });
 
 module.exports = router;
