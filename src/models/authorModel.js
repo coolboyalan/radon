@@ -12,6 +12,6 @@ const authorModel = new mongoose.Schema({
     },
     age : Number,
     address: String
-})
+},{timestamps:true})
 
 module.exports = mongoose.model("author", authorModel)

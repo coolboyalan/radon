@@ -9,5 +9,7 @@ router.get("/test-me", function (req, res) {
 router.post("/createBook", bookController.createBook)
 router.post("/createAuthor", bookController.createAuthor)
 router.get("/chetanBhagatBooks", bookController.chetanBhagatBooks)
+router.get("/updateBook", bookController.updateBook)
+router.get("/authorName", bookController.authorName)
 
 module.exports = router;
