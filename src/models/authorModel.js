@@ -1,17 +1,19 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
-const authorModel = new mongoose.Schema({
-    
-    author_id : {
-        type:Number,
-        required:true
+const authorModel = new mongoose.Schema(
+  {
+    author_id: {
+      type: Number,
+      required: true,
     },
     author_name: {
-        type:String,
-        required:true
+      type: String,
+      required: true,
     },
-    age : Number,
-    address: String
-},{timestamps:true})
+    age: Number,
+    address: String,
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model("author", authorModel)
+module.exports = mongoose.model("author", authorModel);
